@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
     {
         //Invoke using the input text from the input field
         SayHelloEvent?.Invoke(inputFieldText.text);
-        //Reset the input field
-        inputFieldText.text = "";
     }
 
     //Invoke the GiveMeatEvent

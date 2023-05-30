@@ -5,16 +5,23 @@ namespace Zoo
 {
     class Hippo:Animal
     {
-        private void Start()
+        //OnEnable instead of start because events need it
+        public override void OnEnable()
         {
+            base.OnEnable();
+            //Fill in the animal specific fields
             helloResponse = "splash";
+            foodResponseLeaves = "munch munch lovely";
+
+            //Subscribe to animal specific events
+            GameManager.GiveLeavesEvent += EatLeaves;
         }
 
-        public void EatLeaves()
+        public override void OnDisable()
         {
-            Balloon.SetActive(true);
-            text.text = "munch munch lovely";
+            base.OnDisable();
+            //Unsubscribe to events to prevent issues
+            GameManager.GiveLeavesEvent -= EatLeaves;
         }
     }
-    
 }

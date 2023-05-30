@@ -6,15 +6,23 @@ namespace Zoo
 {
     class Zebra : Animal
     {
-        private void Start()
+        //OnEnable instead of start because events need it
+        public override void OnEnable()
         {
+            base.OnEnable();
+            //Fill in the animal specific fields
             helloResponse = "zebra zebra";
+            foodResponseLeaves = "munch munch zank yee bra";
+
+            //Subscribe to animal specific events
+            GameManager.GiveLeavesEvent += EatLeaves;
         }
 
-        public void EatLeaves()
+        public override void OnDisable()
         {
-            Balloon.SetActive(true);
-            text.text = "munch munch zank yee bra";
+            base.OnDisable();
+            //Unsubscribe to events to prevent issues
+            GameManager.GiveLeavesEvent -= EatLeaves;
         }
     }
 }
