@@ -4,19 +4,11 @@ using UnityEngine.UI;
 
 namespace Zoo
 {
-    class Lion : MonoBehaviour
+    class Lion : Animal
     {
-        [SerializeField]
-        private GameObject Balloon;
-        [SerializeField]
-        private Text text;
-        public string name;
-
-
-        public void SayHello()
+        private void Start()
         {
-            Balloon.SetActive(true);
-            text.text = "roooaoaaaaar";
+            helloResponse = "roooaoaaaaar";
         }
 
         public void EatMeat()

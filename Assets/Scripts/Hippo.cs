@@ -3,18 +3,11 @@ using UnityEngine.UI;
 
 namespace Zoo
 {
-    class Hippo:MonoBehaviour
+    class Hippo:Animal
     {
-        public string name;
-        [SerializeField]
-        private GameObject Balloon;
-        [SerializeField]
-        private Text text;
-
-        public void SayHello()
+        private void Start()
         {
-            Balloon.SetActive(true);
-            text.text = "splash";
+            helloResponse = "splash";
         }
 
         public void EatLeaves()
