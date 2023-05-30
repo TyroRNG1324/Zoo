@@ -954,6 +954,8 @@ MonoBehaviour:
   pig: {fileID: 1157437131242584, guid: b4ef08bb34d7e8d42a322a3fb477bd93, type: 3}
   tiger: {fileID: 1635293449333400, guid: 9d8f88e4e4860ac489141755f7175db2, type: 3}
   zebra: {fileID: 1072593225874480, guid: ca5452b56f32abc46bc83ba2db5f04fd, type: 3}
+  bird: {fileID: 5510344464044478802, guid: 8b8cb1b46f5b58b40b85d1cdbd3dde09, type: 3}
+  snake: {fileID: 4318034146689682242, guid: b68f3261ece1c7641b50becd9a705bf8, type: 3}
 --- !u!1 &980321563
 GameObject:
   m_ObjectHideFlags: 0
