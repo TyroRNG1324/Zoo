@@ -6,15 +6,25 @@ namespace Zoo
 {
     class Tiger : Animal
     {
-        private void Start()
+        //OnEnable instead of start because events need it
+        public override void OnEnable()
         {
+            base.OnEnable();
+            //Fill in the animal specific fields
             helloResponse = "rraaarww";
+            foodResponseMeat = "nomnomnom thx wubalubadubdub";
+
+            //Subscribe to animal specific events
+            GameManager.GiveMeatEvent += EatMeat;
+            GameManager.DoTricksEvent += PerformTrick;
         }
 
-        public void EatMeat()
+        public override void OnDisable()
         {
-            Balloon.SetActive(true);
-            text.text = "nomnomnom thx wubalubadubdub";
+            base.OnDisable();
+            //Unsubscribe to events to prevent issues
+            GameManager.GiveMeatEvent -= EatMeat;
+            GameManager.DoTricksEvent -= PerformTrick;
         }
 
         public void PerformTrick()
